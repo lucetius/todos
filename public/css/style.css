@@ -1,0 +1,30 @@
+
+#startTask, #finishDiv {
+    display: none;
+}
+
+#clockDiv {
+    display: none;
+    font-size: 40px;
+}
+
+.taskPanel {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete {
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 1em;
+    border: none;
+    position: relative;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}

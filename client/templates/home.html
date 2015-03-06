@@ -1,0 +1,51 @@
+<template name="home">
+
+    <form class="new-task">
+      <div class="aacol-lg-8 well taskPanel">
+	<div class="input-group">
+	  <input type="text" name="taskInput" class="form-control" placeholder="Task name">
+	  <span class="input-group-btn">
+	    <button class="btn btn-primary" type="submit">Add task</button>
+	  </span>
+	</div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </form>
+	
+	
+    <div id="startTask">
+	<div class="panel panel-default taskPanel">
+	  <div class="panel-heading"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>&nbsp;&nbsp; Your tasks <span class="badge">{{itemsCount}}</span></div>
+	  <div class="panel-body" align="center">
+	
+	   <div id="startDiv">
+	    <p>Take breath and if you ready click Start button</p>
+		<input type="button" value="Start" class="btn btn-success startButton">
+	   </div>
+	
+	   <div id="clockDiv">{{timeCounter}}</div>
+	
+	   <div id="finishDiv">
+	    Ok time is up.<br><br> 
+	    Write shortly what you do:
+	    <input type="text" id="taskInputComplete" name="taskInputComplete" class="form-control" placeholder="Description">
+	    <button type="button" class="btn btn-primary saveButton" style="margin-top: 10px;">Save</button>
+	   </div>
+	
+	  </div>
+	
+	  <ul class="list-group">
+		 {{#each tasks}}
+			{{> homeTask}}
+		 {{/each}}
+	  </ul>
+	</div>
+    </div>
+
+</template>
+
+<template name="homeTask">
+    <li class="list-group-item">
+     <button class="delete">&times;</button>
+     <span class="text">{{name}}</span>
+    </li>    
+</template>

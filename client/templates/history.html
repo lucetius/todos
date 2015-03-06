@@ -1,0 +1,38 @@
+<template name="history">
+    {{#each taskGroup}}
+    
+<div class="panel panel-default taskPanel">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+    {{taskGroupName this}} <span class="label label-default">{{taskGroupMore this}}</span>
+  </div>
+  <div class="panel-body">
+    <p>
+        <dl class="dl-horizontal small">
+          <dt>Total items:</dt>
+          <dd>5</dd>
+          <dt>Total time:</dt>
+          <dd>{{taskGroupTotal this}}</dd>
+          <dt>Date</dt>
+          <dd>{{taskGroupFrom this}} - {{taskGroupTo this}}</dd>
+          <dt>Description:</dt>
+          <dd>{{taskGroupDesc this}}</dd>
+        </dl>      
+    </p>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group small">
+    {{> historyItems tasks=this}}    
+  </ul>
+</div>
+
+    {{/each}}    
+</template>
+
+<template name="historyItems">
+    {{#each taskGroupItem tasks}}
+        <li class="list-group-item">{{name}}</li>
+    {{/each}}
+</template>
