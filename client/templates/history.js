@@ -24,7 +24,10 @@ Template.history.helpers({
         return taskDate.getFullYear() + '-' + addZero(taskDate.getMonth()+1) + '-' + addZero(taskDate.getDate())
                 + ' ' + addZero(taskDate.getHours()) + ':' + addZero(taskDate.getMinutes());
     },
-    taskGroupTotal: function(task) {
+    taskGroupTotalItems: function(task) {
+        return task.length;
+    },
+    taskGroupTotalTime: function(task) {
         var taskDate = Math.floor((parseInt(task[0].closedAt) - parseInt(task[0].createdAt))/1000);
         var minutes = Math.floor(taskDate / 60);
         return minutes + ' minutes and ' + addZero(taskDate - minutes) + ' seconds';
