@@ -42,4 +42,3 @@ Template.historyItems.helpers({
         return _.sortBy(items, 'createdAt');
     }
 });
-

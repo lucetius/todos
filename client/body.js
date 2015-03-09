@@ -12,4 +12,4 @@ Template.ApplicationLayout.helpers({
     }
     return false;
   }
-})
+});

@@ -27,7 +27,19 @@ Template.home.rendered = function () {
     var tasksCount = getTasksCount();
     if (tasksCount > 0) {
         $("#startTask").css('display', 'block');
-    }    
+    }
+    
+    this.find('#items-container')._uihooks = {
+        insertElement: function(node, next) {
+            $(node).hide().insertBefore(next).slideDown('slow');
+        },
+        removeElement: function(node) {
+            $(node.lastElementChild).fadeOut();
+            $(node).slideUp('slow', function() {
+                $(this).remove();
+            });
+        }
+    };
 }
 
 Template.home.helpers({
